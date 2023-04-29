@@ -1,0 +1,65 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+    padding: 20px;
+    border: solid 2px gray;
+    border-radius: 5px;
+    background-color: goldenrod;
+}
+.label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 500;
+}
+.input {
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    border-color: transparent;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+    padding: 5px;
+}
+
+.input::placeholder {
+    color: red;
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.btn {
+    color: #212121;
+    background-color: burlywood;
+    border: transparent solid 1px;
+    border-radius: 4px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    transition: background-color 250ms cubic-bezier(.4, 0, .2, 1),
+        color 250ms cubic-bezier(.4, 0, .2, 1),
+        box-shadow 250ms cubic-bezier(.4, 0, .2, 1);
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    background-color: blueviolet;
+}
+
+.btn:focus {
+    transform: scale(1.2);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    background-color: bisque;
+}
