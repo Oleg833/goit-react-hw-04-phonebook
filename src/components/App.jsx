@@ -14,20 +14,9 @@ const startContacts = [
 
 const App = () => {
   const [filter, setFilter] = useState('');
-  const [contacts, setContacts] = useState(startContacts);
-
-  const componentDidMount = () => {
-    const parsedContacts = JSON.parse(localStorage.getItem('contacts'));
-
-    if (parsedContacts) {
-      setContacts(parsedContacts);
-      console.log('Restored contacts');
-    }
-  };
-
-  useEffect(() => {
-    componentDidMount();
-  }, []);
+  const [contacts, setContacts] = useState(
+    JSON.parse(localStorage.getItem('contacts')) ?? startContacts
+  );
 
   useEffect(() => {
     console.log('Saved contacts');
@@ -62,7 +51,6 @@ const App = () => {
   const deleteContact = id => {
     setContacts(contacts.filter(contact => contact.id !== id));
     setFilter('');
-    // console.log(filter);
   };
 
   return (
