@@ -19,11 +19,11 @@ const App = () => {
   );
 
   useEffect(() => {
-    console.log('Saved contacts');
+    // console.log('Saved contacts');
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
-  const formSubmit = ({ name, number }) => {
+  const formSubmit = (name, number) => {
     const contact = {
       id: nanoid(),
       name,
