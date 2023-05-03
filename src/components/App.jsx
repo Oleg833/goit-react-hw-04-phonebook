@@ -19,7 +19,6 @@ const App = () => {
   );
 
   useEffect(() => {
-    // console.log('Saved contacts');
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
@@ -35,7 +34,7 @@ const App = () => {
         i.number === contact.number
     )
       ? alert(`${name} is already in contacts`)
-      : setContacts([contact, ...contacts]);
+      : setContacts(prevContacts => [contact, ...prevContacts]);
   };
 
   const changeFilterInput = e => {
@@ -49,12 +48,12 @@ const App = () => {
   };
 
   const deleteContact = id => {
-    setContacts(contacts.filter(contact => contact.id !== id));
-    setFilter('');
+    setContacts(prevContacts =>
+      prevContacts.filter(contact => contact.id !== id)
+    );
   };
 
   return (
-    // const { filter } = this.state;
     <section className={css.section}>
       <h1 className={css.title}>Phonebook</h1>
       <ContactForm onSubmit={formSubmit} />

@@ -8,7 +8,7 @@ const ContactForm = ({ onSubmit }) => {
 
   const handleChange = event => {
     const { name, value } = event.currentTarget;
-    // console.log(name, value);
+
     if (name === 'name') {
       setName(value);
     } else if (name === 'number') {
@@ -18,7 +18,7 @@ const ContactForm = ({ onSubmit }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    // console.log(name, number);
+
     onSubmit(name, number);
     setName('');
     setNumber('');
